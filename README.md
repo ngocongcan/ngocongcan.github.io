@@ -1,164 +1,120 @@
-# Master of Science in Robotics Student Portfolio Template
+> March, 2016: If you're on an old version of Jekyll Now and run into a) build warnings or b) syntax highlighting issues caused by [Jekyll 3 and GitHub Pages updates](https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0), just :sparkles:[update your _config.yml](https://github.com/barryclark/jekyll-now/pull/445/files):sparkles: and you'll be set!
 
+# Jekyll Now
 
+**Jekyll** is a static site generator that's perfect for GitHub hosted blogs ([Jekyll Repository](https://github.com/jekyll/jekyll))
 
-## Jekyll Overview
+**Jekyll Now** makes it easier to create your Jekyll blog, by eliminating a lot of the up front setup.
 
-### Built with Jekyll
-Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through Markdown and Liquid converters, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server. Jekyll also happens to be the engine behind GitHub Pages, which means you can use Jekyll to host your project's page, blog, or website from GitHub's servers for free (taken from Jekyll's website: http://jekyllrb.com/docs/home/).
+- You don't need to touch the command line
+- You don't need to install/configure ruby, rvm/rbenv, ruby gems :relaxed:
+- You don't need to install runtime dependencies like markdown processors, Pygments, etc
+- If you're on Windows, this will make setting up Jekyll a lot easier
+- It's easy to try out, you can just delete your forked repository if you don't like it
 
-### Get your workstation set up
-* Install <a href="https://www.ruby-lang.org/en/downloads/>Ruby</a>
-* Install <a href="rubygems.org/pages/download">RubyGems</a>
-* Install <a href="nodejs.org">NodeJS</a>
-* Install <a href="jekyllrb.com/docs/installation">Jekyll</a>
+In a few minutes you'll be set up with a minimal, responsive blog like the one below giving you more time to spend on writing epic blog posts!
 
-### Basic Usage (recommended)
-In one terminal, build the jekyll site, watching for any changes (run in site root directory)
-```
-$  jekyll build --watch
-```
-In another terminal, start a local server (run in site root directory)
-```
-$  jekyll serve
-```
-If you're running Mac and your pages aren't rebuilding, then you may need to run
-```
-$ jekyll serve --force_polling
-```
-View the site in your browser at
-```
-localhost:4000/msr-student-template/
-```
+![Jekyll Now Theme Screenshot](/images/jekyll-now-theme-screenshot.jpg "Jekyll Now Theme Screenshot")
 
-## Adding Images
-For now, images need to be manually formatted into a square aspect ratio.  No scaling for small images is performed, so images under 500px may throw off the template for higher resolution screens.  On the to-do list.
+## Quick Start
 
+### Step 1) Fork Jekyll Now to your User Repository
 
-## File structure
-```
-|-- README.md (this)
-|-- _config.yml (overall configuration file for the site)
-|-- _includes (all the markup partials)
-|   |-- footer.html
-|   |-- head.html
-|   |-- header.html
-|-- _layouts (page markup templates)
-|   |-- about.html
-|   |-- contact.html
-|   |-- main.html
-|   |-- project.html
-|-- _projects (markdown files that make up the "projects" jekyll collection)
-|   |-- 2014-09-22-project-1.md
-|   |-- 2014-09-23-project-2.md
-|   |-- 2014-09-24-project-3.md
-|   |-- 2014-09-25-project-4.md
-|   |-- 2014-09-26-project-5.md
-|   |-- 2014-09-27-project-6.md
-|   |-- 2014-09-28-project-7.md
-|   |-- 2014-09-29-project-8.md
-|-- _site (the entire site after it is processed by Jekyll)
-|   |-- README.md
-|   |-- about
-|   |-- contact
-|   |-- feed.xml
-|   |-- index.html
-|   |-- projects
-|   |-- public
-|-- about.md (about page markdown)
-|-- contact.md (contact page markdown)
-|-- feed.xml (contains general information about Jekyll's usage)
-|-- index.html (home page of the site)
-|-- public (static content including fonts, images, js, and css files)
-|   |-- fonts
-|   |-- images
-|   |-- javascripts
-|   |-- stylesheets
-```
+Fork this repo, then rename the repository to yourgithubusername.github.io.
 
+Your Jekyll blog will often be viewable immediately at <http://yourgithubusername.github.io> (if it's not, you can often force it to build by completing step 2)
 
+![Step 1](/images/step1.gif "Step 1")
 
-## More on how Jekyll works
+### Step 2) Customize and view your site
 
-### The Jekyll Engine
-First, if you look inside the \_site directory, you'll see that no directories or files there begin with an underscore (\_). The contents of that directory are the end result of Jekyll's processing engine. All of the files and directories in the root directory of the repository that do begin with an underscore, on the other hand, are "raw". They either include markup that will be included within pages of the final site or they contain markdown and "Front Matter" (which I'll explain later) that will be converted into markup by Jekyll's engine. One of the two commands that you need to run in order to host the site on a local server:
-```
-jekyll build --watch
-```
-runs that engine, processing and reprocessing the "raw" files every time you make a change to a file. The files and directories in the root directory of the repository that _don't_ begin with an underscore are ignored by Jekyll and will remain the exact same in the _site directory.
+Enter your site name, description, avatar and many other options by editing the _config.yml file. You can easily turn on Google Analytics tracking, Disqus commenting and social icons here too.
 
-### Front Matter
-Any file that contains a YAML front matter block will be processed by Jekyll as a special file. The front matter must be the first thing in the file and must take the form of valid YAML, set between triple-dashed lines (taken from Jekyll's documentation: http://jekyllrb.com/docs/frontmatter/). Here's a basic example that you'll find in the index.html file:
-```
----
-layout: default
-title: Portfolio
----
-```
-This first item tells Jekyll to take all of the markup in index.html and plug it into the _layouts/main.html template to take the place of the {{ content }} variable found in that template file.
-The second item tells Jekyll to create a variable, page.title, that you can use in the markup of the template. For example, in _layouts/main.html, you could write:
-```
-<head>
-	<title>{{ page.title }}</title>
-</head>
-```
-and that would render as:
-```
-<head>
-	<title>Portfolio</title>
-</head>
-```
+Making a change to _config.yml (or any file in your repository) will force GitHub Pages to rebuild your site with jekyll. Your rebuilt site will be viewable a few seconds later at <http://yourgithubusername.github.io> - if not, give it ten minutes as GitHub suggests and it'll appear soon
 
-### Collections
-Collections allow you to define a new type of document that can be somewhat conceptualized as an object type, each having its own unique properties and namespaces. These collections are declared in the _config.yml file:
-```
-collections:
-  projects:
-    output: true
-    permalink: /projects/:path/
-```
-For this site, we only use one collections: projects, the contents of which can be found in the _projects directory. Notice that this directory name begins with an underscore. This is because each file in it only contains some combination of markdown and front-matter and will be processed by Jekyll's engine. Let's look at projects/2014-09-22-project-1.md as an example:
-```
----
-layout: project
-title: Project 1
-date: September 22, 2014
-image: http://unsplash.it/400?random
----
+> There are 3 different ways that you can make changes to your blog's files:
 
-## Overview
-Lorem ipsum dolor sit amet, tota primis copiosae id quo. Melius eligendi elaboraret pri et, eam menandri platonem te. Tollit iudicabit gloriatur per ad. Ad diceret recteque eum, eu commodo petentium qui. No aliquid delectus eam, dicta eripuit convenire te nec. Vix no veritus dignissim. Erat ferri veniam ut eos, pro ex eius error intellegat, his te graecis oporteat honestatis.
+> 1. Edit files within your new username.github.io repository in the browser at GitHub.com (shown below).
+> 2. Use a third party GitHub content editor, like [Prose by Development Seed](http://prose.io). It's optimized for use with Jekyll making markdown editing, writing drafts, and uploading images really easy.
+> 3. Clone down your repository and make updates locally, then push them to your GitHub repository.
 
-### Topic 1
-His nemore audiam consequat ad, no augue choro assueverit mei. Zril offendit tincidunt ne quo. At commodo integre alienum sea, cu vocent fuisset suscipit nam. Eum ex tation omnesque adversarium, mutat autem putant te nam. Id vix facilis complectitur, vis vitae vivendo euripidis ea, fugit eirmod an vix...
-```
-This file represents a project in the projects collection and contains both YAML front matter and Markdown. You can see how powerful collections are if we take a look at a snippet of index.html:
-```
-<ul id="portfolio-gallery">
-    {% for project in site.projects %}
-        <li>
-            <a href="{{ site.baseurl }}{{ project.url }}">
-                <img src="{{ project.image }}">
-                <h2>{{ project.title }}</h2>
-            </a>
-        </li>
-    {% endfor %}
-</ul>
-```
-The ```{% %}``` tags represent liquid syntax and their contents are processed by Jekyll to render static HTML in the final site. You can see that all of the projects in the projects collection can be referenced with ```site.projects``` and iterated through with a for loop. In this specific for loop, for each project in the projects collection, we pull its image and title using ```{{ }}``` tags. All of a particular project's information is defined in its markdown file just like the one which we saw above. You can find more useful information about collections in Jekyll's website (http://jekyllrb.com/docs/collections/).
+![_config.yml](/images/config.png "_config.yml")
 
+### Step 3) Publish your first blog post
 
+Edit `/_posts/2014-3-3-Hello-World.md` to publish your first blog post. This [Markdown Cheatsheet](http://www.jekyllnow.com/Markdown-Style-Guide/) might come in handy.
 
-## Maintaining the Site
+![First Post](/images/first-post.png "First Post")
 
-### Adding Projects
-To add a project, just create a .md file in the _projects directory with front matter at the beginning that follows this format (taken from 2014-09-22-project-1.md):
-```
----
-layout: project
-title: Project 1
-date: September 22, 2014
-image: http://unsplash.it/400?random
----
-```
-Following that front matter, just add content in regular markdown.
+> You can add additional posts in the browser on GitHub.com too! Just hit the + icon in `/_posts/` to create new content. Just make sure to include the [front-matter](http://jekyllrb.com/docs/frontmatter/) block at the top of each new blog post and make sure the post's filename is in this format: year-month-day-title.md
+
+## Local Development
+
+1. Install Jekyll and plug-ins in one fell swoop. `gem install github-pages` This mirrors the plug-ins used by GitHub Pages on your local machine including Jekyll, Sass, etc.
+2. Clone down your fork `git clone https://github.com/yourusername/yourusername.github.io.git`
+3. Serve the site and watch for markup/sass changes `jekyll serve`
+4. View your website at http://127.0.0.1:4000/
+5. Commit any changes and push everything to the master branch of your GitHub user repository. GitHub Pages will then rebuild and serve your website.
+
+## Moar!
+
+I've created a more detailed walkthrough, [**Build A Blog With Jekyll And GitHub Pages**](http://www.smashingmagazine.com/2014/08/01/build-blog-jekyll-github-pages/) over at the Smashing Magazine website. Check it out if you'd like a more detailed walkthrough and some background on Jekyll. :metal:
+
+It covers:
+
+- A more detailed walkthrough of setting up your Jekyll blog
+- Common issues that you might encounter while using Jekyll
+- Importing from Wordpress, using your own domain name, and blogging in your favorite editor
+- Theming in Jekyll, with Liquid templating examples
+- A quick look at Jekyll 2.0’s new features, including Sass/Coffeescript support and Collections
+
+## Jekyll Now Features
+
+✓ Command-line free _fork-first workflow_, using GitHub.com to create, customize and post to your blog  
+✓ Fully responsive and mobile optimized base theme (**[Theme Demo](http://jekyllnow.com)**)  
+✓ Sass/Coffeescript support using Jekyll 2.0  
+✓ Free hosting on your GitHub Pages user site  
+✓ Markdown blogging  
+✓ Syntax highlighting  
+✓ Disqus commenting  
+✓ Google Analytics integration  
+✓ SVG social icons for your footer  
+✓ 3 http requests, including your avatar  
+
+✘ No installing dependencies
+✘ No need to set up local development  
+✘ No configuring plugins  
+✘ No need to spend time on theming  
+✘ More time to code other things ... wait ✓!  
+
+## Questions?
+
+[Open an Issue](https://github.com/barryclark/jekyll-now/issues/new) and let's chat!
+
+## Other forkable themes
+
+You can use the [Quick Start](https://github.com/barryclark/jekyll-now#quick-start) workflow with other themes that are set up to be forked too! Here are some of my favorites:
+
+- [Hyde](https://github.com/poole/hyde) by MDO
+- [Lanyon](https://github.com/poole/lanyon) by MDO
+- [mojombo.github.io](https://github.com/mojombo/mojombo.github.io) by Tom Preston-Werner
+- [Left](https://github.com/holman/left) by Zach Holman
+- [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) by Michael Rose
+- [Skinny Bones](https://github.com/mmistakes/skinny-bones-jekyll) by Michael Rose
+
+## Credits
+
+- [Jekyll](https://github.com/jekyll/jekyll) - Thanks to its creators, contributors and maintainers.
+- [SVG icons](https://github.com/neilorangepeel/Free-Social-Icons) - Thanks, Neil Orange Peel. They're beautiful.
+- [Solarized Light Pygments](https://gist.github.com/edwardhotchkiss/2005058) - Thanks, Edward.
+- [Joel Glovier](http://joelglovier.com/writing/) - Great Jekyll articles. I used Joel's feed.xml in this repository.
+- [David Furnes](https://github.com/dfurnes), [Jon Uy](https://github.com/jonuy), [Luke Patton](https://github.com/lkpttn) - Thanks for the design/code reviews.
+- [Bart Kiers](https://github.com/bkiers), [Florian Simon](https://github.com/vermluh), [Henry Stanley](https://github.com/henryaj), [Hun Jae Lee](https://github.com/hunjaelee), [Javier Cejudo](https://github.com/javiercejudo), [Peter Etelej](https://github.com/etelej), [Ben Abbott](https://github.com/jaminscript), [Ray Nicholus](https://github.com/rnicholus), [Erin Grand](https://github.com/eringrand), [Léo Colombaro](https://github.com/LeoColomb), [Dean Attali](https://github.com/daattali), [Clayton Errington](https://github.com/cjerrington), [Colton Fitzgerald](https://github.com/coltonfitzgerald), [Trace Mayer](https://github.com/sunnankar) - Thanks for your [fantastic contributions](https://github.com/barryclark/jekyll-now/commits/master) to the project!
+
+## Contributing
+
+Issues and Pull Requests are greatly appreciated. If you've never contributed to an open source project before I'm more than happy to walk you through how to create a pull request.
+
+You can start by [opening an issue](https://github.com/barryclark/jekyll-now/issues/new) describing the problem that you're looking to resolve and we'll go from there.
+
+I want to keep Jekyll Now as minimal as possible. Every line of code should be one that's useful to 90% of the people using it. Please bear that in mind when submitting feature requests. If it's not something that most people will use, it probably won't get merged. :guardsman:
