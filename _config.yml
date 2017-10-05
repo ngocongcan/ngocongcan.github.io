@@ -56,6 +56,8 @@ url: ngocongcan.github.io
 # and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
+image_path: "images"
+project_image_path: "images/projects"
 
 #
 # !! You don't need to change any of the configuration flags below !!
