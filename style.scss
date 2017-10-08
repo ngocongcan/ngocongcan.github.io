@@ -278,6 +278,16 @@ nav {
   background-color: $lightGray;
 }
 
+.project {
+  margin: 5%;
+  #project-image {
+    width: 90%;
+  }
+}
+.app-store-button {
+  margin-right: 20px;
+}
+
 footer {
   padding: 20px 0;
   text-align: center;
