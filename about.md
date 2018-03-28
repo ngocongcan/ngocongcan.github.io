@@ -5,7 +5,7 @@ permalink: /about/
 published: true
 ---
 
-Hi! I'm Can Ngo-Cong, Software Engineer at Freelancer. I'm fascinated with building the great applications that solve real, human problems.
+Hi! I'm **Can Ngo**, Software Engineer at Freelancer. I'm fascinated with building the awesome applications that solve real, human problems.
 
 ***
 

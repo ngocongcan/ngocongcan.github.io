@@ -12,11 +12,6 @@ title: Portfolio
 				<div class="content">
 					<a href="{{ site.baseurl }}{{ project.url }}">
 						<span class="link-spanner"></span>
-						<div class="image-container">
-							<div class="image-vertical-align-box" >
-								<img class="inner" src="{{ site.baseurl }}/{{ site.project_image_path }}/{{ project.image }}">
-							</div>
-						</div>
 						<div class="inner-text">
 							<h2>
 								{{ project.title }}
@@ -24,17 +19,26 @@ title: Portfolio
 							<h4>
 								<span>{{ project.language }}</span>
 							</h4>
+							<div class="image-container">
+								<div class="image-vertical-align-box" >
+									<img class="inner" src="{{ site.baseurl }}/{{ site.project_image_path }}/{{ project.image }}">
+								</div>
+							</div>
 							<h4>
-								<span class="app-store-button">
-									<a href="{{ project.iturn_url }}">
-										<img src="{{ site.baseurl }}/{{ site.image_path }}/appstore_button.png">
-									</a>
-								</span>
+								{% if project.iturn_url %}
+									<span class="app-store-button">
+										<a href="{{ project.iturn_url }}">
+											<img src="{{ site.baseurl }}/{{ site.image_path }}/appstore_button.png">
+										</a>
+									</span>
+								{% endif %}
+								{% if project.google_play_url %}
 								<span class="app-store-button">
 									<a href="{{ project.google_play_url }}">
 										<img src="{{ site.baseurl }}/{{ site.image_path }}/googleplay_button.png">
 									</a>
 								</span>
+								{% endif %}
 							</h4>
 							<h6>
 								<span>{{ project.content }}</span>
