@@ -1,6 +1,4 @@
 ---
-layout: post
-title: Symfony vs Laravel : Which PHP framework to choose?
 published: true
 ---
 
