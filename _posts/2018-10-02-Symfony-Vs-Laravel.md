@@ -25,15 +25,15 @@ Now as you know the common features of Symfony and Laravel let’s see what Symf
 
 Symfony as a PHP framework is well suited for large-scale or complex enterprise level projects. It is a quite stable framework. Symfony 3.1 (the current version) helps developers create scalable websites that are flexible to changing business requirements. Symfony can work with some of the largest open source platforms such as PHPBB, Piwik, and Drupal.
 
-Here are some other key advantages of Symfony development features –
+Here are some other key advantages of Symfony development features
 
-    1. There are many easy scalability options available in Symfony. With optimizing Propels,  Limiting the number of objects to hydrate, Minimizing the number of queries with joins and avoid using temporary arrays Symfony promises high scalability.
+1. There are many easy scalability options available in Symfony. With optimizing Propels,  Limiting the number of objects to hydrate, Minimizing the number of queries with joins and avoid using temporary arrays Symfony promises high scalability.
 
-    2. If Symfony is implemented well, then its speed is the sum of the individual speeds of all the features it includes. Or, from a different angle, Symfony’s speed is the consequence of a series of choices that you made to decide whether a feature should make it to the core or not. Hence, Symfony is faster than many other PHP frameworks if you use properly.
+2. If Symfony is implemented well, then its speed is the sum of the individual speeds of all the features it includes. Or, from a different angle, Symfony’s speed is the consequence of a series of choices that you made to decide whether a feature should make it to the core or not. Hence, Symfony is faster than many other PHP frameworks if you use properly.
 
-    3. It is adaptive to the user’s needs and offers optimum performance. Symfony2 introduced unique HTTP and HTTP cache handling by being an HTTP-centric request/response framework. Also, it increases performance by allowing full use of advanced features like ESI for separating the different parts of your page/application.
+3. It is adaptive to the user’s needs and offers optimum performance. Symfony2 introduced unique HTTP and HTTP cache handling by being an HTTP-centric request/response framework. Also, it increases performance by allowing full use of advanced features like ESI for separating the different parts of your page/application.
 
-    4. Symfony provides a reusable component reducing overhead costs. There are many reusable components that will make your life easier.
+4. Symfony provides a reusable component reducing overhead costs. There are many reusable components that will make your life easier.
 
 #### Laravel
 
@@ -43,13 +43,13 @@ Laravel is a PHP framework purely meant for developing MVC based applications. I
 
 Here are some of the key advantages of developing with Laravel:
 
-    1. PHP Framework Laravel helps with enforcing constraints between multiple database objects with the help of an advanced query builder mechanism. Apart from that, it provides an easy version control system that helps with simplified management of migrations.
+1. PHP Framework Laravel helps with enforcing constraints between multiple database objects with the help of an advanced query builder mechanism. Apart from that, it provides an easy version control system that helps with simplified management of migrations.
 
-    2. The framework has an auto-loading facility and does not need manual maintenance and inclusion paths. Also, it helps in generating new tools with the help of an IoC container.
+2. The framework has an auto-loading facility and does not need manual maintenance and inclusion paths. Also, it helps in generating new tools with the help of an IoC container.
 
-    3. Authentication is one the few important parts of any web development project.  With Laravel, authentication is much simpler as it contains the ready to use inbuilt authentication system. You just need to configure database migrations, controllers, models, and views to make the system work.
+3. Authentication is one the few important parts of any web development project.  With Laravel, authentication is much simpler as it contains the ready to use inbuilt authentication system. You just need to configure database migrations, controllers, models, and views to make the system work.
 
-    4. Until now, developers were bound to declare application events as a string. However, you can declare new events in the application using “event object” with Laravel .  The event objects created using php artisan make:event & event header object using php artisan handler:event . You can fire the events using Event::fire(new Event(params)) once you create any new event. This makes it much easier and faster.
+4. Until now, developers were bound to declare application events as a string. However, you can declare new events in the application using “event object” with Laravel .  The event objects created using php artisan make:event & event header object using php artisan handler:event . You can fire the events using Event::fire(new Event(params)) once you create any new event. This makes it much easier and faster.
 
 ### The bottom line of Symfony vs Laravel PHP Framework
 
