@@ -2,16 +2,17 @@
 published: true
 ---
 
-In  Symfony, When creating Form with single/multiple select from dropdown, we ussually have problem with a large amount of data. With [Select2](https://select2.org/), the jQuery replacement for select boxes, we can do it easyly by using ajax. However, in certain specific cases, we have to do it for ourself instead of using pre-existing library/package. In this post, I'm going to share about how to customize EntityType of Symfony2 with Select2. 
+
+In  Symfony, When creating Form with single/multiple select from dropdown, we ussually have problem with a large amount of data. With [Select2](https://select2.org/), the jQuery replacement for select boxes, we can do it easily by using ajax. However, in certain specific cases, we have to do it for ourself instead of using pre-existing library/package. In this post, I'm going to share to you how to customize EntityType of Symfony2 with Select2. 
 
 1. [Select2 3.5.4 ](https://github.com/select2/select2/tree/3.5.4) 
 2. [Symfony 2.8](https://symfony.com/)
 
 ### Problem
 
-Due to many reasons, you can not refactor/upgrade your project/framework/library... In my case, I have to resolve the problem with a large amount of data without upgrade Select2 from 3.5.4 to 4.x, there is an awesome php package called [select2entity-bundle](https://github.com/tetranz/select2entity-bundle) which supports symfony2 and symfony3. There are 2 problem:
+Due to many reasons, you can not refactor/upgrade your project/framework/library... In my case, I have to resolve the problem with a large amount of data without upgrade Select2 from 3.5.4 to 4.x, there is an awesome php package called [select2entity-bundle](https://github.com/tetranz/select2entity-bundle) which supports symfony2 and symfony3. There are 2 problems:
 1. The awesome options on v2.* only works with Select2 version 4.*, whereas [select2entity-bundle](https://github.com/tetranz/select2entity-bundle) v1.x works on select2 v3.x has limit options. 
-2. I'd like to embed some extra parameters and csrf token to the ajax request to make the systems more flexible and secure.
+2. I'd like to embed some extra parameters and csrf token to the ajax request to make the system more flexible and secure.
 
 ### How to do that
 
@@ -304,6 +305,7 @@ In app/config/services.yml,
         {% set type = type|default('hidden') %}
         {{ block('form_widget_simple') }}
     {% endblock %}
+
 **Firth**, in app/config/config.yml
 
     # Twig Configuration
@@ -497,7 +499,7 @@ In app/config/services.yml,
 **Requirement:** 
 - Platform already defined a route for all ajax functions called `ajaxGetData`, any requests to that route will be handled in the function `dataSearchAction` in `AjaxController.php`, in this function, Platform validate `CsrfTokenValid` and call a function based on request parameter `function`. Then return the data which return by `requested function`. 
 
-- There is 
+- Nike have some projects such as: Footwear, Manswear, Sportwear, Apparell... For every project, they have many suppliers in many regions. The relationship between project and supplier is presented in the Purchase Orders (PO). For example, Nike have 5 POs on project Footwear and 10 POs on project Manswear with  with Supplier 1. They have 10 POs on project Footwear and 10 POs on project Sportwear with  with Supplier 2... They would like to have a feature to create the notes. Every note should be belongs to 1 or many projects, 1 or many suppliers, none or many POs. So that, POs should be filtered by selected projects and suppliers.
 
     public function dataSearchAction(Request $request) {
 
@@ -544,7 +546,6 @@ In app/config/services.yml,
 
 In FormType (eg : NoteType), buildForm:
 
-
     $builder->add('notePos', 'hd_select2entity', [
                 'class' => Purchaseorders::class,
                 'label' => "Purchase order(s)",
@@ -553,7 +554,7 @@ In FormType (eg : NoteType), buildForm:
                 'required' => false,
                 'multiple' => true,
                 'minimum_input_length' => 5,
-                'remote_route' => 'noteAjaxGetData',
+                'remote_route' => 'ajaxGetData',
                 'request_optional_params' => [
                         'function' => 'getPOsByProjectsAndSuppliers'
                     ],
