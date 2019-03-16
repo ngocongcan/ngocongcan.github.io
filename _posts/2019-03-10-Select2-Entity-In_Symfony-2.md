@@ -266,10 +266,22 @@ Due to many reasons, you can not refactor/upgrade your project/framework/library
         }
     }
 
+**Thirdly**, register `Select2Entity` as a DI in the services
+
+In app/config/services.yml,
+
+    hd.select2entity:
+        class: AppBundle\Form\Type\Select2EntityType
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@router'
+        tags:
+            - {# name: form.type, alias: hd_select2entity  #}
+
 **Fourth**, in app/src/AppBundle/Resources/views/form/fields.twig
 
-    {% block hd_select2entity_widget %}
-        {% set attr = attr|merge({
+    {# block hd_select2entity_widget #}
+        {# set attr = attr|merge({
             'data-multiple': multiple ? 1 : 0,
             'data-min-length': minimum_input_length,
             'data-csrf-token-class': csrf_token_class,
@@ -286,14 +298,14 @@ Due to many reasons, you can not refactor/upgrade your project/framework/library
             'data-page-limit': page_limit,
             'data-scroll': scroll ? 'true' : '',
             'data-autostart': autostart ? 'true' : '',
-        }) %}
+        }) #}
 
         {# Add class for jQuery for find it #}
-        {% set attr = attr|merge({ 'class': (attr.class|default('') ~ ' hdselect2entity')|trim }) %}
+        {# set attr = attr|merge({ 'class': (attr.class|default('') ~ ' hdselect2entity')|trim }) #}
 
-        {% set type = type|default('hidden') %}
-        {{ block('form_widget_simple') }}
-    {% endblock %}
+        {# set type = type|default('hidden') #}
+        {#{ block('form_widget_simple') }#}
+    {# endblock #}
     
 
 **Firth**, in app/config/config.yml
@@ -556,11 +568,11 @@ In FormType (eg : NoteType), buildForm:
 
 In noteType.twig, include select2entity.js
     
-    {% block javascripts %}
-        {{ parent() }}
-        {% javascripts
+    {# block javascripts #}
+        {#{ parent() }#}
+        {# javascripts
         '@AppBundle/Resources/public/js/select2entity/select2entity.js'
-        %}
-        <script type="application/javascript" src="{{ asset_url }}"></script>
-        {% endjavascripts %}
-    {% endblock %}
+        #}
+        <script type="application/javascript" src="{#{ asset_url }#}"></script>
+        {# endjavascripts #}
+    {$ endblock #}
