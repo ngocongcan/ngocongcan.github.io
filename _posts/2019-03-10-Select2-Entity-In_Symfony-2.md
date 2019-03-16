@@ -266,12 +266,6 @@ Due to many reasons, you can not refactor/upgrade your project/framework/library
         }
     }
 
-**Thirdly**, register `Select2Entity` as a DI in the services
-
-In app/config/services.yml,
-
-
-
 **Fourth**, in app/src/AppBundle/Resources/views/form/fields.twig
 
     {% block hd_select2entity_widget %}
