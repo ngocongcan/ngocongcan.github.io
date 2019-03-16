@@ -270,13 +270,15 @@ Due to many reasons, you can not refactor/upgrade your project/framework/library
 
 In app/config/services.yml,
 
+
+
     hd.select2entity:
         class: AppBundle\Form\Type\Select2EntityType
         arguments:
-            - '@doctrine.orm.entity_manager'
-            - '@router'
+            @doctrine.orm.entity_manager
+            @router
         tags:
-            - { name: form.type, alias: hd_select2entity  }
+            name: form.type, alias: hd_select2entity
 
 **Fourth**, in app/src/AppBundle/Resources/views/form/fields.twig
 
