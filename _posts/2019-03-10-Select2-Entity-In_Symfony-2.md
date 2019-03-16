@@ -272,11 +272,6 @@ In app/config/services.yml,
 
 
 
-    hd.select2entity:
-        class: AppBundle\Form\Type\Select2EntityType
-        arguments:
-            name: form.type, alias: hd_select2entity
-
 **Fourth**, in app/src/AppBundle/Resources/views/form/fields.twig
 
     {% block hd_select2entity_widget %}
