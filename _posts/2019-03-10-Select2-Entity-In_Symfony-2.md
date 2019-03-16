@@ -267,6 +267,7 @@ Due to many reasons, you can not refactor/upgrade your project/framework/library
     }
 
 **Thirdly**, register `Select2Entity` as a DI in the services
+
 In app/config/services.yml,
 
     hd.select2entity:
@@ -305,6 +306,7 @@ In app/config/services.yml,
         {% set type = type|default('hidden') %}
         {{ block('form_widget_simple') }}
     {% endblock %}
+    
 
 **Firth**, in app/config/config.yml
 
