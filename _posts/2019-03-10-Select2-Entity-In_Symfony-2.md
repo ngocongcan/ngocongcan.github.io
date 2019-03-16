@@ -277,7 +277,6 @@ In app/config/services.yml,
         arguments:
             @doctrine.orm.entity_manager
             @router
-        tags:
             name: form.type, alias: hd_select2entity
 
 **Fourth**, in app/src/AppBundle/Resources/views/form/fields.twig
