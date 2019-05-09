@@ -5,29 +5,40 @@ permalink: /about/
 published: true
 ---
 
-Hi! I'm **Can Ngo**, Software Engineer at Freelancer. I'm fascinated with building the awesome applications that solve real, human problems.
+Hi! I'm **Can Ngo**, a Software Engineer. I'm fascinated with building the awesome applications that solve real, human problems.
 
 ***
 
 ## Technical skills
 
-#### Languages
+#### Programming Languages
 
-* Objective-C (4+ years)
-* Swift (2+ years)
-* PHP (2+ years)
-* Javascript (2+ years)
-* HTML, CSS (2+ years)
+* PHP
+* JavaScript
+* HTML, CSS
+* Objective-C
+* Swift
 
-#### Frameworks, Platforms & APIs
+#### Libraries, Frameworks, Platforms
 
-* iOS, Android
-* Ionic 2,3
-* Symfony, Laravel, Yii, Codeignter
-* VueJS, AngularJS
+* Symfony
+* Laravel
+* iOS
+* Bootstrap
+* JQuery
+* AngularJS
+* Vue.js
+* Ionic
+
+#### Web Services/API
+
 * RESTful
+* SOAP
+* Google Places
+* Facebook
+* Twitter
 
-#### Working tools
+#### Business tools
 
 * Skype
 * Slack
@@ -35,15 +46,20 @@ Hi! I'm **Can Ngo**, Software Engineer at Freelancer. I'm fascinated with buildi
 * Jira
 * Redmine
 * Toggl
-* Invisionapp
-* Dropbox
+* Invision
 
 #### Databases
 
 * MySQL
 * NoSQL
 * SQLite
-* Firebase
+
+#### Cloud servers
+
+* Hostinger
+* Google Cloud Platforms
+* Amazon Web Services
+* Heroku
 
 #### Tools
 
@@ -59,8 +75,11 @@ Hi! I'm **Can Ngo**, Software Engineer at Freelancer. I'm fascinated with buildi
 * Gitlab
 
 ***
+## Education
 
-## Professional History
+## Experience
+
+## Portfolio
 
 ***
 

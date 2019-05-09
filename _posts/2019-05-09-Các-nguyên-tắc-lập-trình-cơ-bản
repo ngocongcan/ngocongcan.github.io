@@ -1,0 +1,29 @@
+---
+published: false
+---
+
+1. OOP Principle
+2. SOLID
+3. MVC
+
+
+### OOP Principle
+
+1. Abstraction (Tính trừu tượng)
+2. Encapsulation (Tính bao đóng)
+3. Inheritance (Tính kế thừa)
+4. Polymophirsm (Tính đa hình)
+
+### SOLID
+
+1. Single responsibility principle
+2. Open/closed principle
+3. Liskov substitution principle
+4. Interface segregation principle
+5. Dependency inversion principle
+
+### MVC
+
+1. Model
+2. View
+3. Controller
