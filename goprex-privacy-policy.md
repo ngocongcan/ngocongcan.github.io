@@ -1,3 +1,9 @@
+---
+layout: privacy-policy
+title: GoPREx Privacy Policy
+path: /goprex-privacy-policy
+published: true
+---
 **Privacy Policy**
 
 @ngocongcan built the GoPREx app as a Free app. This SERVICE is provided by @ngocongcan at no cost and is intended for use as is.
